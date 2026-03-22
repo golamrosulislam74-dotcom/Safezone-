@@ -1,19 +1,17 @@
-// This script runs automatically when the page loads
-console.log("GitHub Engine v2.0 Connected successfully.");
 
-// 1. Logic Change: Show a welcome message
-alert("GitHub Update Detected! Switching to Neon Pro Mode.");
+// This script runs automatically on your Blog
+console.log("GitHub Engine v2.0 Connected!");
 
-// 2. Feature Change: Add a hover effect to the preview box
+// 1. Logic Change: Show a welcome message to confirm the link
+alert("GitHub Update Detected! Switching to Neon Mode.");
+
+// 2. Feature Change: Add a glow effect when you hover the preview
 const previewBox = document.querySelector('.preview-stage');
 if(previewBox) {
-    previewBox.addEventListener('mouseenter', () => {
-        previewBox.style.borderColor = '#22c55e'; // Changes to Green on hover
-        previewBox.style.transform = 'scale(1.02)';
-    });
-    previewBox.addEventListener('mouseleave', () => {
-        previewBox.style.borderColor = '#8b5cf6';
-        previewBox.style.transform = 'scale(1)';
-    });
+    previewBox.onmouseenter = () => {
+        previewBox.style.boxShadow = "0 0 50px #a855f7";
+    };
+    previewBox.onmouseleave = () => {
+        previewBox.style.boxShadow = "none";
+    };
 }
-
