@@ -12,3 +12,9 @@ body { background: var(--bg); color: white; font-family: 'Inter', sans-serif; ma
 .btn-primary:hover { opacity: 0.8; transform: translateY(-2px); }
 select, input[type="range"] { width: 100%; margin: 10px 0; background: #1a1a2e; color: white; border: 1px solid #333; padding: 10px; border-radius: 8px; }
 @media (max-width: 768px) { .app-container { grid-template-columns: 1fr; } }
+/* This will turn your title RED from GitHub */
+h2 { 
+    color: #ff0000 !important; 
+    text-align: center;
+    font-size: 30px;
+                             }
