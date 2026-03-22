@@ -1,22 +1,19 @@
+// This script runs automatically when the page loads
+console.log("GitHub Engine v2.0 Connected successfully.");
 
-// SafeZone Engine v4.0 - Golamrosulislam74-dotcom
-const overlays = {
-    tiktok: 'https://i.ibb.co/L5p1F3f/tiktok-2026-overlay.png',
-    reels: 'https://i.ibb.co/vYvH6hN/reels-2026-overlay.png'
-};
+// 1. Logic Change: Show a welcome message
+alert("GitHub Update Detected! Switching to Neon Pro Mode.");
 
-document.getElementById('video-input').onchange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        document.getElementById('v-preview').src = URL.createObjectURL(file);
-    }
-};
+// 2. Feature Change: Add a hover effect to the preview box
+const previewBox = document.querySelector('.preview-stage');
+if(previewBox) {
+    previewBox.addEventListener('mouseenter', () => {
+        previewBox.style.borderColor = '#22c55e'; // Changes to Green on hover
+        previewBox.style.transform = 'scale(1.02)';
+    });
+    previewBox.addEventListener('mouseleave', () => {
+        previewBox.style.borderColor = '#8b5cf6';
+        previewBox.style.transform = 'scale(1)';
+    });
+}
 
-window.updateUI = () => {
-    const platform = document.getElementById('platform-select').value;
-    document.getElementById('ui-img').src = overlays[platform];
-};
-
-window.updateAlpha = (val) => {
-    document.getElementById('ui-img').style.opacity = val / 100;
-};
