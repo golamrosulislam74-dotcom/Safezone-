@@ -1,13 +1,22 @@
 
-// This controls what happens when you click
-function changeColor() {
-    const box = document.getElementById('myBox');
-    const colors = ['#ef4444', '#10b981', '#f59e0b', '#6366f1'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    
-    box.style.backgroundColor = randomColor;
-    box.innerText = "Color Changed!";
-}
+// SafeZone Engine v4.0 - Golamrosulislam74-dotcom
+const overlays = {
+    tiktok: 'https://i.ibb.co/L5p1F3f/tiktok-2026-overlay.png',
+    reels: 'https://i.ibb.co/vYvH6hN/reels-2026-overlay.png'
+};
 
-// Attach the function to the button
-document.getElementById('colorBtn').addEventListener('click', changeColor);
+document.getElementById('video-input').onchange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        document.getElementById('v-preview').src = URL.createObjectURL(file);
+    }
+};
+
+window.updateUI = () => {
+    const platform = document.getElementById('platform-select').value;
+    document.getElementById('ui-img').src = overlays[platform];
+};
+
+window.updateAlpha = (val) => {
+    document.getElementById('ui-img').style.opacity = val / 100;
+};
